@@ -1,4 +1,4 @@
-body.nav-sm .container.body .left_col {
+﻿body.nav-sm .container.body .left_col {
     width: 70px;
     padding: 0;
     position: fixed;
@@ -6,10 +6,18 @@ body.nav-sm .container.body .left_col {
     z-index: 200;
 }
 
+
+
+
+
+
+
+
 body.nav-sm .container.body .right_col {
     padding: 10px 20px;
     margin-left: 70px;
     z-index: 2;
+    x-index:0;
 }
 
 .right_col {
