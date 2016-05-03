@@ -1,0 +1,232 @@
+﻿@model OGG.Data.ProductMasterViewModel
+
+<tr>
+    <td>
+        @Html.HiddenFor(model => model.Id, new { @class = "iHidden" })
+    </td>
+
+    @if (Model.ProductTypeId == 1 || Model.ProductTypeId == 2)
+    {
+        <td class="frame" style="Width:150px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].ModelNumber, new { @placeholder = "Model Number", @name = "Product[@Model.Id]__ModelNumber", @id = "Product[@Model.Id]__ModelNumber", @class = "form-control" })
+        </td>
+        <td class="frame" style="Width:125px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].ColorCode, new { @placeholder = "Color Code", @name = "Product[@Model.Id]__ColorCode", @id = "Product[@Model.Id]__ColorCode", @class = "form-control" })
+        </td>
+        <td class="frame" style="Width:70px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].Size, new { @placeholder = "Size", @name = "Product[@Model.Id]__Size", @id = "Product[@Model.Id]__Size", @class = "form-control" })
+        </td>
+
+        <td class="frame" style="Width:125px">
+            @Html.DropDownListFor(model => model.productData[@Model.Id].Material, (IEnumerable<SelectListItem>)ViewBag.material, new { @placeholder = "Material", @id = "Product[i]__Material", @class = "form-control" })
+        </td>
+        <td class="frame" style="Width:125px">
+            @Html.DropDownListFor(model => model.productData[@Model.Id].Pattern, (IEnumerable<SelectListItem>)ViewBag.pattern, new { @placeholder = "Pattern", @id = "Product[i]__Pattern", @class = "form-control" })
+        </td>
+
+        <td class="frame" style="Width:80px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].PurchaseQuantity, new { @placeholder = "PurchaseQty", @name = "Product[i]__PurchaseQty", @id = "Product[i]__PurchaseQty", @class = "form-control", Value = "0", @style = "width:80px" })
+        </td>
+        if (@ViewBag.Edit == true)
+        { 
+   
+    }
+    
+    else
+        {
+             <td class="frame" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].Price, new { @placeholder = "Price", @id = "Product[i]__Price", @class = "form-control", @style = "width:80px" })
+    </td>
+
+    <td class="frame" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].PurchaseProductPrice, new { @placeholder = "Pur_Price", @id = "Product[i]__PurPrice", @class = "form-control", @style = "width:80px" })
+    </td>
+    <td class="frame" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].SellProductPrice, new { @placeholder = "Sel_Price", @id = "Product[i]_SellPrice", @class = "form-control", @style = "width:80px" })
+    </td>
+    <td class="frame">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].Vat, new { @placeholder = "Vat", @id = "Product[i]_Vat", @class = "form-control", @style = "width:80px" })
+    </td>
+        }
+        
+        @*<td class="frame" style="Width:125px"></td>
+        <td class="frame" style="Width:125px"></td>*@
+    }
+    else if (Model.ProductTypeId == 3)
+    {
+        <td class="opth" style="Width:150px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].productmodelnumber, new { @placeholder = "Product Name", @name = "Product[@Model.Id]__ModelNumber", @id = "Product[@Model.Id]__ModelNumber", @class = "form-control" })
+        </td>
+        <td class="opth" style="Width:125px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].Cost, new { @placeholder = "Cost", @id = "Product[i]__Cost", @class = "form-control" })
+        </td>
+        <td class="opth" style="Width:125px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].MRP, new { @placeholder = "MRP", @id = "Product[i]__MRP", @class = "form-control" })
+        </td>
+         if (@ViewBag.Edit == true)
+        { 
+   
+    }
+    
+    else
+        {
+    <td class="opth" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].Price, new { @placeholder = "Price", @id = "Product[i]__Price", @class = "form-control", @style = "width:80px" })
+    </td>
+
+    <td class="opth" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].PurchaseProductPrice, new { @placeholder = "Pur_Price", @id = "Product[i]__PurPrice", @class = "form-control", @style = "width:80px" })
+    </td>
+    <td class="opth" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].SellProductPrice, new { @placeholder = "Sel_Price", @id = "Product[i]_SellPrice", @class = "form-control", @style = "width:80px" })
+    </td>
+    <td class="opth" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].Vat, new { @placeholder = "Vat", @id = "Product[i]_Vat", @class = "form-control", @style = "width:80px" })
+    </td>
+    }
+        @*<td class="opth" style="Width:125px"></td>*@
+    }
+    else if (Model.ProductTypeId == 4)
+    {
+        <td class="cont" style="Width:150px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].productmodelnumber, new { @placeholder = "Product Name", @name = "Product[@Model.Id]__ModelNumber", @id = "Product[@Model.Id]__ModelNumber", @class = "form-control" })
+        </td>
+        <td class="cont" style="Width:100px">
+            @Html.DropDownListFor(model => model.productData[@Model.Id].Modlity, (IEnumerable<SelectListItem>)ViewBag.modality, new { @placeholder = "Modlity", @id = "Product[i]__Modlity", @class = "form-control" })
+        </td>
+
+        <td class="cont" style="Width:100px">
+            @Html.DropDownListFor(model => model.productData[@Model.Id].Type, (IEnumerable<SelectListItem>)ViewBag.LenseType, new { @placeholder = "Type", @id = "Product[i]__dropdowntype", @class = "form-control" })
+        </td>
+        <td class="cont" style="Width:100px">
+            @Html.DropDownListFor(model => model.productData[@Model.Id].Materialconleses, (IEnumerable<SelectListItem>)ViewBag.material, new { @placeholder = "Material", @name = "Product[i]__Material", @id = "Product[i]__Material", @class = "form-control" })
+        </td>
+        <td class="cont" style="Width:100px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].Diameterconlenses, new { @placeholder = "Diameter", @name = "Product[@Model.Id]__Diameter", @id = "Product[@Model.Id]__Diameter", @class = "form-control" })
+        </td>
+        <td class="cont" style="Width:130px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].BaseCureveconlenses, new { @placeholder = "Base Curve", @name = "Product[@Model.Id]__BaseCurve", @id = "Product[@Model.Id]__BaseCurve", @class = "form-control" })
+        </td>
+
+        <td class="cont" style="Width:80px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].PurchaseQuantity, new { @placeholder = "PurchaseQty", @name = "Product[i]__PurchaseQty", @id = "Product[i]__PurchaseQty", @class = "form-control", Value = "0", @style = "width:80px" })
+            @*@Html.TextBoxFor(model => model.productData[@Model.Id].MinQuantity, new { @placeholder = "MinQty", @name = "Product[i]__MinQuantity", @id = "Product[i]__MinQuantity", @class = "form-control", Value = "0", @style = "width:80px" })*@
+        </td>
+        
+         if (@ViewBag.Edit == true)
+        { 
+   
+    }
+    
+    else
+        {
+        
+    <td class="cont" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].Price, new { @placeholder = "Price", @id = "Product[i]__Price", @class = "form-control", @style = "width:80px" })
+    </td>
+
+    <td class="cont" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].PurchaseProductPrice, new { @placeholder = "Pur_Price", @id = "Product[i]__PurPrice", @class = "form-control", @style = "width:80px" })
+    </td>
+    <td class="cont" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].SellProductPrice, new { @placeholder = "Sel_Price", @id = "Product[i]_SellPrice", @class = "form-control", @style = "width:80px" })
+    </td>
+    <td class="cont" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].Vat, new { @placeholder = "Vat", @id = "Product[i]_Vat", @class = "form-control", @style = "width:80px" })
+    </td>
+    }
+        @*<td class="cont" style="Width:125px"></td>*@
+
+    }
+    else if (Model.ProductTypeId == 5)
+    {
+        <td class="clc" style="Width: 150px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].productmodelnumber, new { @placeholder = "Product Name", @name = "Product[@Model.Id]__ModelNumber", @id = "Product[@Model.Id]__ModelNumber", @class = "form-control" })
+        </td>
+        <td class="clc" style="Width:100px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].Ltype, new { @placeholder = "Type", @id = "Product[@Model.Id]__Type", @class = "form-control" })
+        </td>
+        <td class="clc" style="Width:125px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].Volume, new { @placeholder = "Volume", @name = "Product[@Model.Id]__Volume", @id = "Product[@Model.Id]__Volume", @class = "form-control" })
+        </td>
+        <td class="clc" style="Width:80px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].PurchaseQuantity, new { @placeholder = "PurchaseQty", @name = "Product[i]__PurchaseQty", @id = "Product[i]__PurchaseQty", @class = "form-control", Value = "0", @style = "width:80px" })
+            @*@Html.TextBoxFor(model => model.productData[@Model.Id].MinQuantity, new { @placeholder = "MinQty", @name = "Product[i]__MinQuantity", @id = "Product[i]__MinQuantity", @class = "form-control", Value = "0", @style = "width:80px" })*@
+        </td>
+       
+         if (@ViewBag.Edit == true)
+        { 
+   
+    }
+    
+    else
+        {
+    <td class="clc" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].Price, new { @placeholder = "Price", @id = "Product[i]__Price", @class = "form-control", @style = "width:80px" })
+    </td>
+
+    <td class="clc" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].PurchaseProductPrice, new { @placeholder = "Pur_Price", @id = "Product[i]__PurPrice", @class = "form-control", @style = "width:80px" })
+    </td>
+    <td class="clc" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].SellProductPrice, new { @placeholder = "Sel_Price", @id = "Product[i]_SellPrice", @class = "form-control", @style = "width:80px" })
+    </td>
+    <td class="clc" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].Vat, new { @placeholder = "Vat", @id = "Product[i]_Vat", @class = "form-control", @style = "width:80px" })
+    </td>
+      
+    }
+    }
+
+    else if (Model.ProductTypeId == 9)
+    {
+        <td class="Remarks" style="Width: 150px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].productmodelnumber, new { @placeholder = "Product Name", @name = "Product[@Model.Id]__ModelNumber", @id = "Product[@Model.Id]__ModelNumber", @class = "form-control" })
+        </td>
+        <td class="Remarks" style="Width:80px">
+            @Html.TextBoxFor(model => model.productData[@Model.Id].Remarks, new { @placeholder = "Remarks", @id = "Product[@Model.Id]__Remarks", @class = "form-control", @style = "width:80px" })
+        </td>
+        
+         if (@ViewBag.Edit == true)
+        { 
+   
+    }
+    
+    else
+        {
+        
+    <td class="Remarks" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].Price, new { @placeholder = "Price", @id = "Product[i]__Price", @class = "form-control", @style = "width:80px" })
+    </td>
+
+    <td class="Remarks" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].PurchaseProductPrice, new { @placeholder = "Pur_Price", @id = "Product[i]__PurPrice", @class = "form-control", @style = "width:80px" })
+    </td>
+    <td class="Remarks" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].SellProductPrice, new { @placeholder = "Sel_Price", @id = "Product[i]_SellPrice", @class = "form-control", @style = "width:80px" })
+    </td>
+    <td class="Remarks" style="Width:80px">
+        @Html.TextBoxFor(model => model.productData[@Model.Id].Vat, new { @placeholder = "Vat", @id = "Product[i]_Vat", @class = "form-control", @style = "width:80px" })
+    </td>
+    }
+        
+    }
+    else
+    {
+        @Html.HiddenFor(model => model.Id, new { @class = "iHidden" })
+    }
+
+    @*<td class="Price" style="Width:80px">
+           @Html.TextBoxFor(model => model.productData[@Model.Id].Price, new { @placeholder = "Price", @id = "Product[i]__Price", @class = "form-control", @style = "width:80px" })
+            </td>
+
+          <td class="PurPrice" style="Width:80px">
+          @Html.TextBoxFor(model => model.productData[@Model.Id].PurchaseProductPrice, new { @placeholder = "Pur_Price", @id = "Product[i]__PurPrice", @class = "form-control", @style = "width:80px" })
+         </td>
+          <td class="SellPrice" style="Width:80px">
+          @Html.TextBoxFor(model => model.productData[@Model.Id].SellProductPrice, new { @placeholder = "Sel_Price", @id = "Product[i]_SellPrice", @class = "form-control", @style = "width:80px" })
+         </td>
+         <td class="Vat">
+         @Html.TextBoxFor(model => model.productData[@Model.Id].Vat, new { @placeholder = "Vat", @id = "Product[i]_Vat", @class = "form-control", @style = "width:80px" })
+        </td>*@
+</tr>
